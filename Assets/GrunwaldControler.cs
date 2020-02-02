@@ -8,18 +8,21 @@ public class GrunwaldControler : MonoBehaviour
 
     void Start()
     {
-        
-    }
 
+    }
 
     void Update()
     {
         
     }
 
-    public void AudioPlay()
+    public void AudioPlay(AudioClip otherClip)
     {
-        audioSource.Play();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = otherClip;
+            audioSource.Play();
+        }
     }
 
 }
